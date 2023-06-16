@@ -34,7 +34,6 @@ namespace FigurasGeometricas
                 {
                     Console.WriteLine("Que figura quieres agregar" +
                     "\nCirculo ingresa(0) \nRectangulo ingresa(1) \nRombo ingresa(2) \nIngresa 3 para salir,");
-
                     opcion = int.Parse(Console.ReadLine());
                 }
 
