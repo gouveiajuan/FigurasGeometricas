@@ -13,32 +13,34 @@ namespace FigurasGeometricas
 
         public Diagrama()
         {
-                Console.WriteLine("Ingresa (0) si quieres que sea un diagrama a mano"
-                    + "\nIngresa (1) si quieres que se cree de forma Random"
-                + "\nIngresa (2) si quieres ingresar los datos de cada figura");
-                int i = int.Parse(Console.ReadLine());
-                int opcion=3;
+            Console.WriteLine("Ingresa (0) si quieres que sea un diagrama a mano"
+                             + "\nIngresa (1) si quieres que se cree de forma Random"
+                             + "\nIngresa (2) si quieres ingresar los datos de cada figura");
+            int i = int.Parse(Console.ReadLine());
+            int opcion=3;
 
                 if (i == 0)
                 {
                     opcion = 4;
                     i++;
                 }
-                else if (i == 1)
-                {
-                Random random = new Random();
-                int valorAleatorio = random.Next(1,1000);
-                AgregarCirculo(valorAleatorio);
-                }
-            else if (i == 2)
-                {
-                    Console.WriteLine("Que figura quieres agregar" +
-                    "\nCirculo ingresa(0) \nRectangulo ingresa(1) \nRombo ingresa(2) \nIngresa 3 para salir,");
-                    opcion = int.Parse(Console.ReadLine());
-                }
+                    else if (i == 1)
+                    {
+                    Random random = new Random();
+                    int valorAleatorio = random.Next(1,1000);
+                    AgregarCirculo(valorAleatorio);
+                    }
+                        else if (i == 2)
+                        {
+                        Console.WriteLine("Que figura quieres agregar" +
+                        "\nCirculo ingresa(0) \nRectangulo ingresa(1) \nRombo ingresa(2)" 
+                        + "\nIngresa 3 para salir,");
+                        opcion = int.Parse(Console.ReadLine());
+                        }
 
-            bool a = false;
-            while (!a) {
+                bool a = false;
+                while (!a) 
+                {
                     switch (opcion)
                     {
                         case 0:
@@ -77,7 +79,7 @@ namespace FigurasGeometricas
                             break;
                         
                     }
-            }
+                }
         }
 
         public void AgregarCirculo(int r)
@@ -105,9 +107,9 @@ namespace FigurasGeometricas
         {
             double areaTotal = 0;
 
-            for (int i = 0; i < formas.Count; i++)
+            foreach (Forma f in formas)
             {
-                areaTotal += formas[i].Area();
+                areaTotal += f.Area();
             }
             return areaTotal;
         }
@@ -116,9 +118,10 @@ namespace FigurasGeometricas
         {
             double perimetroTotal = 0;
 
-            for (int i = 0; i < formas.Count; i++)
+            foreach (Forma f in formas)
             {
-                perimetroTotal += formas[i].Perimetro();
+
+                perimetroTotal += f.Area();
             }
             return perimetroTotal;
         }
